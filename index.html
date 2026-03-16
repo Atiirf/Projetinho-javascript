@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estação espacial</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Inventário de estação espacial</h1>
+    </header>
+    <div class="cadastroItem">
+        <b>Cadastro de itens: </b>
+        <form>
+            <label for="nomeItemCadastro">Nome: </label>
+            <input type="text" id="nomeItemCadastro" name="nomeItemCadastro" placeholder="Nome do item" required>
+
+            <label for="quantidadeItensCadastros">Quantidade:</label>
+            <input type="number" id="quantidadeItensCadastro" name="quantidadeItensCadastros" placeholder="Quantidade" required>
+
+            <label for="selecionaItemCritico">Item crítico: </label>
+            <input type="checkbox" id="selecionaItemCritico" name="selecionaItemCritico">
+
+            <button type="submit" id="botaoCadastrarItem" name="botaoCadastrarItem">Cadastrar item</button>
+        </form>
+    </div>
+    <div class="filtrarItens">
+        <form>
+            <label for="exibirTodos">Exibir todos os itens: </label>
+            <input id="exibirTodos" type="radio" name="exibirOpcao" value="exibirTodos" checked>
+
+            <label for="exibirCriticos">Exibir apenas críticos: </label>
+            <input id="exibirCriticos" type="radio" name="exibirOpcao" value="exibirCriticos">
+        </form>
+       <div class="listarItens">
+        <ul id="listaItens">
+
+        </ul>
+       </div> 
+       <footer class="mostraTotal">
+    
+       </footer>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
