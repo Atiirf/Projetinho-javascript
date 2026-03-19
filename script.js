@@ -65,11 +65,14 @@ const listarItens = () => {
 
 
     linhas = filtrar.map(item => {
+
+    const nomeFormatado = item.nome.charAt(0).toUpperCase() + item.nome.slice(1).toLowerCase();
+
     if (item.critico){
-        return `<li class="item-critico">Item: ${item.nome} | Quantidade: ${item.quantidade}</li>`
+        return `<li class="item-critico">Item: ${nomeFormatado} | Quantidade: ${item.quantidade}</li>`
     }
     else{
-        return `<li class="item-normal">Item: ${item.nome} | Quantidade: ${item.quantidade}</li>`
+        return `<li class="item-normal">Item: ${nomeFormatado} | Quantidade: ${item.quantidade}</li>`
     }
     
 });
