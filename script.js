@@ -22,8 +22,26 @@ const adicionarItem = (envio) =>{
         critico: criticoCheckbox.checked
     }
 
-    inventario.push(novoItem);
-    console.log("Item adicionado:", novoItem);
+    let itemExistente = false;
+    for (let i in inventario) {
+        if (inventario[i].nome.toLowerCase() === novoItem.nome.toLowerCase()) {
+            inventario[i].quantidade += novoItem.quantidade;
+            itemExistente = true;
+            break;
+        }
+    }
+
+    if(!itemExistente){    
+        inventario.push(novoItem);
+    }
+
+    if(!itemExistente){
+        console.log("Item adicionado:", novoItem);
+    }
+    else(
+        console.log("Item atualizado:", inventario.find(item => item.nome.toLowerCase() === novoItem.nome.toLowerCase()))
+    )
+
     console.log("Inventário:", inventario);
 
     listarItens();
@@ -70,3 +88,4 @@ listarItens();
 formulario.addEventListener('submit', adicionarItem);
 radioTodos.addEventListener('change', listarItens);
 radioCriticos.addEventListener('change', listarItens); 
+
